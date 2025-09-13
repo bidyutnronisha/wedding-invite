@@ -1,4 +1,4 @@
-const APPS_SCRIPT_URL = "YOUR_APPS_SCRIPT_WEB_APP_URL"; // replace with your deployment
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbys-Hp4gLMWIX6ytMaykpmH7tzysTXPkShhGzXhE4yz2Tt6KJYY-d0jJo2ggi9ZH2s-0w/exec"; // replace with your deployment
 
 // --- Venue Slideshow ---
 const venueImages = ["images/venue1.jpg", "images/venue2.jpg", "images/venue3.jpg"];
