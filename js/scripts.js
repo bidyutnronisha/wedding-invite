@@ -1,4 +1,4 @@
-const uploadUrl = 'https://script.google.com/macros/s/AKfycbyITSgL_lmBqcgpDape0lNh6yIc3oX-oDVFkzx7mnwdR-T68vqxblo5yNCX5CaeqU1RzQ/exec'; // Replace with your Apps Script URL
+const uploadUrl = 'https://script.google.com/macros/s/AKfycbwfYbY0THBlhysSiqEFQDR_TSkso2FL1zcuXvS0AWDhvwiT1oBmVhTZOlML1zHB87GQ8A/exec'; // Replace with your Apps Script URL
 
 // Slideshow logic
 function initSlideshow(slideshowId) {
