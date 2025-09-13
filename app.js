@@ -1,4 +1,4 @@
-const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbys-Hp4gLMWIX6ytMaykpmH7tzysTXPkShhGzXhE4yz2Tt6KJYY-d0jJo2ggi9ZH2s-0w/exec"; // paste from deployment
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyhjRDJnG6dCqjPWKaLv_pSYVg7kTs6tigNR_JSK6y6qrUCcnazVln-8Z8gGQ1z5ruxBA/exec"; // paste from deployment
 
 // --- Venue Slideshow ---
 const venueImages = ["venue1.jpg", "venue2.jpg", "venue3.jpg"];
@@ -54,5 +54,55 @@ document.getElementById("upload-form").addEventListener("submit", async (e) => {
   reader.readAsDataURL(file);
 });
 
+async function loadGallery() {
+  try {
+    const res = await fetch(APPS_SCRIPT_URL + "?action=listEvents");
+    const data = await res.json();
+
+    if (!data.success) {
+      document.getElementById("gallery-container").innerHTML = "<p>❌ Failed to load gallery.</p>";
+      return;
+    }
+
+    const container = document.getElementById("gallery-container");
+    container.innerHTML = "";
+
+    data.events.forEach(ev => {
+      const section = document.createElement("div");
+      section.style.marginBottom = "40px";
+
+      const title = document.createElement("h3");
+      const link = document.createElement("a");
+      link.href = ev.url;
+      link.target = "_blank";
+      link.textContent = ev.name;
+      title.appendChild(link);
+
+      section.appendChild(title);
+
+      const imgRow = document.createElement("div");
+      imgRow.style.display = "flex";
+      imgRow.style.gap = "10px";
+      ev.images.forEach(url => {
+        const img = document.createElement("img");
+        img.src = url;
+        img.style.width = "150px";
+        img.style.height = "100px";
+        img.style.objectFit = "cover";
+        imgRow.appendChild(img);
+      });
+
+      section.appendChild(imgRow);
+      container.appendChild(section);
+    });
+  } catch (err) {
+    console.error("Gallery load error:", err);
+    document.getElementById("gallery-container").innerHTML = "<p>❌ Error loading gallery.</p>";
+  }
+}
+
 // --- Init ---
-document.addEventListener("DOMContentLoaded", runSlideshow);
+document.addEventListener("DOMContentLoaded", () => {
+  runSlideshow();
+  loadGallery();
+});
