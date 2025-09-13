@@ -1,4 +1,4 @@
-const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxIYc36dUB2_dPnyEIIpiIhjdW9f49XSbV1I0e7MBE8dTPslw5ADnd4FUm8vIMrgbPwiQ/exec"; // paste from deployment
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzsg2P8Fj-TD-Cg8Q56iZGOMMIWGsOK33YBfF1UWCdv11F49dLsWkoHVK277h3VBzg/exec"; // paste from deployment
 
 // --- Venue Slideshow ---
 const venueImages = ["venue1.jpg", "venue2.jpg", "venue3.jpg"];
