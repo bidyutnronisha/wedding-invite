@@ -11,7 +11,7 @@ function runSlideshow() {
   }, 3000);
 }
 
-// --- Upload Handler ---
+// --- Upload Handler with Progress ---
 document.getElementById("upload-form").addEventListener("submit", async (e) => {
   e.preventDefault();
 
@@ -23,10 +23,15 @@ document.getElementById("upload-form").addEventListener("submit", async (e) => {
     return;
   }
 
-  const reader = new FileReader();
-  reader.onload = async () => {
-    const base64Content = reader.result.split(",")[1];
+  const progressBar = document.getElementById("upload-progress");
+  const progressText = document.getElementById("progress-text");
+  progressBar.style.display = "block";
+  progressBar.value = 0;
+  progressText.textContent = "Starting upload...";
 
+  const reader = new FileReader();
+  reader.onload = () => {
+    const base64Content = reader.result.split(",")[1];
     const body = new URLSearchParams({
       eventName,
       fileName: file.name,
@@ -34,23 +39,43 @@ document.getElementById("upload-form").addEventListener("submit", async (e) => {
       fileContent: base64Content,
     });
 
-    try {
-      const res = await fetch(APPS_SCRIPT_URL, {
-        method: "POST",
-        body
-      });
-      const data = await res.json();
+    // Use XMLHttpRequest for progress tracking
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", APPS_SCRIPT_URL, true);
 
-      if (data.success) {
-        alert("✅ Uploaded successfully!\n" + data.url);
-        fileInput.value = "";
-      } else {
-        alert("❌ Upload failed: " + data.error);
+    xhr.upload.onprogress = (event) => {
+      if (event.lengthComputable) {
+        const percent = Math.round((event.loaded / event.total) * 100);
+        progressBar.value = percent;
+        progressText.textContent = `Uploading: ${percent}%`;
       }
-    } catch (err) {
-      alert("❌ Error uploading: " + err.message);
-    }
+    };
+
+    xhr.onload = () => {
+      if (xhr.status === 200) {
+        const response = JSON.parse(xhr.responseText);
+        if (response.success) {
+          progressText.textContent = "✅ Upload complete!";
+          alert("Uploaded successfully!\n" + response.url);
+          fileInput.value = "";
+        } else {
+          progressText.textContent = "❌ Upload failed.";
+          alert("Upload failed: " + response.error);
+        }
+      } else {
+        progressText.textContent = "❌ Server error.";
+        alert("Error: " + xhr.status);
+      }
+    };
+
+    xhr.onerror = () => {
+      progressText.textContent = "❌ Network error.";
+      alert("Upload failed due to network error.");
+    };
+
+    xhr.send(body);
   };
+
   reader.readAsDataURL(file);
 });
 
