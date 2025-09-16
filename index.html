@@ -306,7 +306,29 @@
 			
 		</div>
 	</div>
+ <!-- Upload Form -->
+  <section>
+    <h2>Upload Your Photos</h2>
+    <form id="upload-form">
+      <label for="event">Choose Event:</label>
+      <select id="event">
+        <option value="Ceremony">Ceremony</option>
+        <option value="Reception">Reception</option>
+      </select><br><br>
+      <input type="file" id="file-input" required><br><br>
+      <button type="submit">Upload</button>
+    </form>
 
+    <!-- Progress Bar -->
+    <progress id="upload-progress" value="0" max="100" style="width:80%; display:none;"></progress>
+    <p id="progress-text"></p>
+  </section>
+
+  <!-- Guest Gallery (from Drive) -->
+  <section id="gallery">
+    <h2>Guest Uploads</h2>
+    <div id="gallery-container"></div>
+  </section>
 
 
 	<footer id="fh5co-footer" role="contentinfo">
