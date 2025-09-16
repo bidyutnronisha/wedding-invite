@@ -2,76 +2,71 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Wedding Celebration</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-    header { text-align: center; padding: 40px; background: #f8f8f8; }
-    header h1 { margin: 0; font-size: 2.5rem; }
-    section { padding: 40px; text-align: center; }
-    #slideshow img { width: 80%; max-height: 400px; object-fit: cover; }
-    .people { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
-    .person { width: 150px; text-align: center; }
-    .person img { width: 100%; border-radius: 50%; }
-    #upload-form { margin-top: 30px; }
-    footer { padding: 20px; text-align: center; background: #eee; }
-  </style>
+  <title>Our Wedding</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
   <header>
-    <h1>Our Wedding</h1>
-    <p>Bride & Groom</p>
-    <img src="bride.jpg" alt="Bride" width="200">
-    <img src="groom.jpg" alt="Groom" width="200">
+    <h1>Welcome to Our Wedding 💍</h1>
   </header>
 
-  <section>
-    <h2>People Involved</h2>
-    <div class="people">
-      <div class="person">
-        <img src="maid.jpg" alt="Maid of Honor">
-        <p>Maid of Honor</p>
-      </div>
-      <div class="person">
-        <img src="bestman.jpg" alt="Best Man">
-        <p>Best Man</p>
-      </div>
+  <!-- Bride & Groom Section -->
+  <section class="hero">
+    <div class="profile">
+      <img src="images/bride.jpg" alt="Bride">
+      <h2>The Bride</h2>
+    </div>
+    <div class="profile">
+      <img src="images/groom.jpg" alt="Groom">
+      <h2>The Groom</h2>
     </div>
   </section>
 
-  <section id="slideshow">
-    <h2>Venue Gallery</h2>
-    <img id="venue-img" src="venue1.jpg" alt="Venue Slideshow">
+  <!-- Wedding Party -->
+  <section>
+    <h2>Our Wedding Party</h2>
+    <div class="slideshow" id="party-slideshow">
+      <img src="images/bridesmaids1.jpg" alt="Bridesmaids">
+      <img src="images/groomsmen1.jpg" alt="Groomsmen">
+      <img src="images/family1.jpg" alt="Family">
+    </div>
   </section>
 
- <section>
-  <h2>Upload Your Photos</h2>
-  <form id="upload-form">
-    <label for="event">Choose Event:</label>
-    <select id="event">
-      <option value="Ceremony">Ceremony</option>
-      <option value="Reception">Reception</option>
-    </select>
-    <br><br>
-    <input type="file" id="file-input" required>
-    <br><br>
-    <button type="submit">Upload</button>
-  </form>
+  <!-- Venue Slideshow -->
+  <section>
+    <h2>Wedding Venues</h2>
+    <div class="slideshow" id="venue-slideshow">
+      <img src="images/venue1.jpg" alt="Venue 1">
+      <img src="images/venue2.jpg" alt="Venue 2">
+      <img src="images/venue3.jpg" alt="Venue 3">
+    </div>
+  </section>
 
-  <!-- Progress Bar -->
-  <progress id="upload-progress" value="0" max="100" style="width:80%; display:none;"></progress>
-  <p id="progress-text"></p>
-</section>
-  
-<section id="gallery">
-  <h2>Guest Uploads</h2>
-  <div id="gallery-container"></div>
-</section>
+  <!-- Upload Form -->
+  <section>
+    <h2>Upload Your Photos</h2>
+    <form id="upload-form">
+      <label for="event">Choose Event:</label>
+      <select id="event">
+        <option value="Ceremony">Ceremony</option>
+        <option value="Reception">Reception</option>
+      </select><br><br>
+      <input type="file" id="file-input" required><br><br>
+      <button type="submit">Upload</button>
+    </form>
 
+    <!-- Progress Bar -->
+    <progress id="upload-progress" value="0" max="100" style="width:80%; display:none;"></progress>
+    <p id="progress-text"></p>
+  </section>
 
-  <footer>
-    <p>Thank you for being part of our special day ❤️</p>
-  </footer>
+  <!-- Guest Gallery (from Drive) -->
+  <section id="gallery">
+    <h2>Guest Uploads</h2>
+    <div id="gallery-container"></div>
+  </section>
 
-  <script src="app.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>
