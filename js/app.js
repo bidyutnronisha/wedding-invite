@@ -133,3 +133,25 @@ document.addEventListener("DOMContentLoaded", () => {
   runSlideshow("party-slideshow", 3000);
   loadGallery();
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Ceremony QR Code
+  new QRCode(document.getElementById("qrcode1"), {
+    text: "https://goo.gl/maps/YOUR_CEREMONY_LOCATION", // replace with ceremony location link
+    width: 150,
+    height: 150,
+    colorDark : "#000000",
+    colorLight : "#ffffff",
+    correctLevel : QRCode.CorrectLevel.H
+  });
+
+  // Reception QR Code
+  new QRCode(document.getElementById("qrcode2"), {
+    text: "https://goo.gl/maps/YOUR_RECEPTION_LOCATION", // replace with reception location link
+    width: 150,
+    height: 150,
+    colorDark : "#000000",
+    colorLight : "#ffffff",
+    correctLevel : QRCode.CorrectLevel.H
+  });
+});
