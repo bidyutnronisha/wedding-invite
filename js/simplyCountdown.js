@@ -154,13 +154,7 @@
             cd = document.querySelectorAll(elt);
 
         targetTmpDate = new Date(
-            parameters.year,
-            parameters.month - 1,
-            parameters.day,
-            parameters.hours,
-            parameters.minutes,
-            parameters.seconds
-        );
+            "December 15, 2025 00:00:00").getTime();
 
         if (parameters.enableUtc) {
             targetDate = new Date(
