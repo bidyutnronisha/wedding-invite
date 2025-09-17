@@ -47,7 +47,7 @@
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
-
+		<script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
 	</head>
 	<body>
 		
@@ -248,7 +248,19 @@
 		</div>
 	</div>
 
-	
+	<section id="qr-section">
+  <h2>Scan for Venue Locations</h2>
+  <div class="qr-wrapper">
+    <div class="qr-box">
+      <h3>Ceremony Venue</h3>
+      <div id="qrcode1"></div>
+    </div>
+    <div class="qr-box">
+      <h3>Reception Venue</h3>
+      <div id="qrcode2"></div>
+    </div>
+  </div>
+</section>
 
 
 	<div id="fh5co-services" class="fh5co-section-gray">
@@ -331,7 +343,7 @@
 			<div class="row copyright">
 				<div class="col-md-12 text-center">
 					<p>
-						<small class="block">&Thank you for your kind wishes </small> 
+						<small class="block">Thank you for your kind wishes </small> 
 					</p>
 					<p>
 					</p>
