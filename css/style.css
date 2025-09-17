@@ -1839,5 +1839,34 @@ form label {
 .js .animate-box {
   opacity: 0;
 }
+#qr-section {
+  text-align: center;
+  padding: 40px;
+  background-color: #fff0f5; /* soft romantic background */
+  border-radius: 10px;
+  margin: 40px auto;
+  max-width: 700px;
+}
+
+.qr-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.qr-box {
+  background: #ffe4e1;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.qr-box h3 {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  color: #b22222; /* romantic red */
+}
 
 /*# sourceMappingURL=style.css.map */
