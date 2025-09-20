@@ -116,8 +116,8 @@
     simplyCountdown = function (elt, args) {
         var parameters = extend({
                 year: 2025,
-                month: 12,
-                day: 15,
+                month: 9,
+                day: 22,
                 hours: 0,
                 minutes: 0,
                 seconds: 0,
@@ -154,7 +154,13 @@
             cd = document.querySelectorAll(elt);
 
         targetTmpDate = new Date(
-            "December 15, 2025 00:00:00").getTime();
+            parameters.year,
+            parameters.month - 1,
+            parameters.day,
+            parameters.hours,
+            parameters.minutes,
+            parameters.seconds
+        );
 
         if (parameters.enableUtc) {
             targetDate = new Date(
