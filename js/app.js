@@ -1,4 +1,4 @@
-const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbys-Hp4gLMWIX6ytMaykpmH7tzysTXPkShhGzXhE4yz2Tt6KJYY-d0jJo2ggi9ZH2s-0w/exec"; // Replace with Apps Script link
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxohDuYkLgW9wNC7MgM7g0sDLsqk7Uk2ZOmqmHEnhHenU876nbTUEoAbLjvssIV6OLrSw/exec"; // Replace with Apps Script link
 
 // Generic Slideshow function
 function runSlideshow(slideshowId, interval = 3000) {
