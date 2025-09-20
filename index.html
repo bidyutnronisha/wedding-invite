@@ -243,6 +243,7 @@
 	</div>
 <!-- QR CODES SECTION -->
 <section id="qr-section" class="qr-section">
+	<div id="fh5co-gallery" class="fh5co-section-gray">
   <h2 class="qr-title">Scan for Venue Locations</h2>
 
   <div class="qr-grid">
@@ -270,6 +271,7 @@
   <p class="qr-bottom-message">
     We can't wait to celebrate with you — please save these locations and arrive 15 minutes before the event. ❤️
   </p>
+		</div>
 </section>
 
 
@@ -354,7 +356,9 @@
 	<script src="js/main.js"></script>
 
 	<script>
-   // var d = new Date(new Date().getTime() + 200 * 120 * 120 * 2000);
+		const isoDateString = "2025-12-15T10:30:00Z";
+   // const dateObject = new Date(isoDateString);
+    var d = new Date(isoDateString);
 		var d=1765762200000;
   // Wedding countdown
   simplyCountdown('.simply-countdown-wedding', {
