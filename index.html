@@ -81,7 +81,12 @@
 						<div class="display-tc animate-box" data-animate-effect="fadeIn">
 							<h1>Ronisha &amp; Bidyut</h1>
 							<h2>We Are Getting Married 💍</h2>
-							<div class="simply-countdown simply-countdown-one"></div>
+							<!-- Wedding Countdown -->
+<div class="simply-countdown simply-countdown-wedding"></div>
+
+<!-- Reception Countdown -->
+<div class="simply-countdown simply-countdown-reception"></div>
+
 							<p><a href="#" class="btn btn-default btn-sm">Save the date</a></p>
 						</div>
 					</div>
@@ -106,7 +111,7 @@
 					</div>
 					<div class="desc-groom">
 						<h3>Bidyut Das</h3>
-						<p>A quite soul with towering dreams, who finds loves in mountain winds and lush meadows, he loves his world and everyone in it.</p>
+						<p>A quiet soul with towering dreams, who finds love in mountain winds and lush meadows, he loves his world and everyone in it.</p>
 					</div>
 				</div>
 				<p class="heart text-center"><i class="icon-heart2"></i></p>
@@ -207,7 +212,7 @@
 									<span class="date">October 4, 2015</span>
 								</div>
 								<div class="timeline-body">
-									<p>First Date that the south Park steet cemetary. I was getting scared after being told by security some graves are in bad shape and bones have come out and she started to jump between graves. </p>
+									<p>First Date at the South Park Street Cemetery. I was getting scared after being told by security that some graves are in bad shape and bones have come out and she started to jump between graves. </p>
 								</div>
 							</div>
 						</li>
@@ -219,7 +224,7 @@
 									<span class="date">October 6, 2015</span>
 								</div>
 								<div class="timeline-body">
-									<p>The story started from here, it went through a lot over the years and what kept us strong is trust and the mutual respect we have for one another.</p>
+									<p>The story started from here, it went through a lot over the years, and what kept us strong is trust and the mutual respect we have for one another.</p>
 								</div>
 							</div>
 						</li>
@@ -235,7 +240,7 @@
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
 					<span>Our Memories</span>
 					<h2>Wedding Gallery</h2>
-					<p>A few pictures have been clicked sowing our journey from a decade back</p>
+					<p>A few pictures have been clicked showing our journey from a decade back</p>
 				</div>
 			</div>
 			<div class="row row-bottom-padded-md">
@@ -328,7 +333,7 @@
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
 					<span>Our Memories</span>
 					<h2>Upload Your Photos</h2>
-					<p>We would love to see the photos you have clicked at our wedding, please share with us here.</p>
+					<p>We would love to see the photos you have taken at our wedding. Please share with us here.</p>
 					<form id="upload-form">
       			<label for="event">Choose Event:</label>
       			<select id="event">
@@ -404,6 +409,25 @@
 
 	<script>
     var d = new Date(new Date().getTime() + 200 * 120 * 120 * 2000);
+<script>
+  // Wedding countdown
+  simplyCountdown('.simply-countdown-wedding', {
+      year: 2025,
+      month: 10,   // wedding month
+      day: 20,     // wedding day
+      hours: 19,   // optional: set wedding time (7 PM here)
+      minutes: 0
+  });
+
+  // Reception countdown
+  simplyCountdown('.simply-countdown-reception', {
+      year: 2025,
+      month: 10,   // reception month
+      day: 21,     // reception day
+      hours: 18,   // optional: reception time (6 PM here)
+      minutes: 0
+  });
+</script>
 
     // default example
     simplyCountdown('.simply-countdown-one', {
